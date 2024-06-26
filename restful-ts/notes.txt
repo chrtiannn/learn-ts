@@ -1,0 +1,51 @@
+3 fitur utama:
+1.User management
+2.Contact management
+3.Address management
+
+1.USER management
+user data:
+-username
+-password
+-name
+
+user api:
+-register
+-login
+-update user
+-get user
+-logout user
+
+2.CONTACT MANAGEMENT
+contact data:
+-first name
+-last name
+-email
+-phone
+
+contact api:
+-create contact
+-update contact
+-get contact
+-search contact(by name,by email,dll)
+-remove contact
+
+3.ADDRESS MANAGEMENT 
+address data:
+-street
+-city
+-province
+-country
+-postal code
+
+address api:
+-create address
+-update address
+-get address
+-list address
+-remove address
+
+tsconfig.json:
+-ubah module menjadi commonjs
+
+src/**/* artinya semua file di folder src
