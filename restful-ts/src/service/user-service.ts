@@ -1,12 +1,12 @@
 import { prismaClient } from '../application/database';
 import { ResponseError } from '../error/response-error';
-import { CreateUserRequest, toUserResponse } from '../model/user-model';
+import { CreateUserRequest, UserResponse, toUserResponse } from '../model/user-model';
 import { UserValidation } from '../validation/user-validation';
 import { Validation } from '../validation/validation';
 import bcrypt from 'bcrypt';
 
 export class UserService {
-  static async register(request: CreateUserRequest): Promise<UserRespone> {
+  static async register(request: CreateUserRequest): Promise<UserResponse> {
     const registerRequest = Validation.validate(UserValidation.REGISTER, request);
 
     const totalUserWithSameUsername = await prismaClient.user.count({
