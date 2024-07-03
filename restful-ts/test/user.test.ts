@@ -15,4 +15,18 @@ describe('POST /api/users', () => {
     expect(response.status).toBe(400);
     expect(response.body.errors).toBeDefined();
   });
+
+  it('should register new user', async () => {
+    const response = await supertest(web).post('/api/users').send({
+      username: 'test',
+      password: 'test',
+      name: 'test',
+    });
+
+    logger.debug(response.body);
+
+    expect(response.status).toBe(200);
+    expect(response.body.data.username).toBe('christian');
+    expect(response.body.data.name).toBe('Christian Morgan');
+  });
 });
