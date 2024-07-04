@@ -8,18 +8,18 @@ describe('POST /api/users', () => {
   //   await UserTest.delete();
   // });
 
-  // it('should reject register new user if request is invalid', async () => {
-  //   const response = await supertest(web).post('/api/users').send({
-  //     username: '',
-  //     password: '',
-  //     name: '',
-  //   });
+  it('should reject register new user if request is invalid', async () => {
+    const response = await supertest(web).post('/api/users').send({
+      username: '',
+      password: '',
+      name: '',
+    });
 
-  //   logger.debug(response.body);
+    logger.debug(response.body);
 
-  //   expect(response.status).toBe(400);
-  //   expect(response.body.errors).toBeDefined();
-  // });
+    expect(response.status).toBe(400);
+    expect(response.body.errors).toBeDefined();
+  });
 
   it('should register new user', async () => {
     const response = await supertest(web).post('/api/users').send({
